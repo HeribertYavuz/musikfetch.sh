@@ -38,7 +38,7 @@ Quick Install
 bash
 
 # Download and install
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/musikfetch/main/musikfetch -o musikfetch
+curl -sL https://raw.githubusercontent.com/HeribertYavuz/musikfetch/main/musikfetch -o musikfetch
 chmod +x musikfetch
 sudo mv musikfetch /usr/local/bin/
 
@@ -123,7 +123,7 @@ musikfetch --no-clear
 musikfetch --version
 
 # Quick check with curl
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/musikfetch/main/musikfetch | bash -s --
+curl -sL https://raw.githubusercontent.com/HeribertYavuz/musikfetch/main/musikfetch | bash -s --
 
 How It Works 🔧
 
