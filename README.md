@@ -1,4 +1,4 @@
-SongFetch 🎵
+musikfetch 🎵
 
 A beautiful CLI tool that displays currently playing music information with album art in your terminal.
 Features ✨
@@ -18,7 +18,7 @@ Features ✨
 Preview 📸
 text
 
-▓▒░ SongFetch v1.0.0 ░▒▓
+▓▒░ musikfetch v1.0.0 ░▒▓
 
 ALBUM ART
 [Album cover displayed here in Kitty]
@@ -38,22 +38,22 @@ Quick Install
 bash
 
 # Download and install
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/songfetch/main/songfetch -o songfetch
-chmod +x songfetch
-sudo mv songfetch /usr/local/bin/
+curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/musikfetch/main/musikfetch -o musikfetch
+chmod +x musikfetch
+sudo mv musikfetch /usr/local/bin/
 
 Manual Install
 bash
 
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/songfetch.git
-cd songfetch
+git clone https://github.com/YOUR_USERNAME/musikfetch.git
+cd musikfetch
 
 # Make executable
-chmod +x songfetch
+chmod +x musikfetch
 
 # Install globally (optional)
-sudo cp songfetch /usr/local/bin/
+sudo cp musikfetch /usr/local/bin/
 
 Dependencies ⚙️
 Required:
@@ -81,14 +81,14 @@ Usage 🚀
 Simply run:
 bash
 
-songfetch
+musikfetch
 
 Options:
 bash
 
-songfetch --help      # Show help message
-songfetch --version   # Show version info
-songfetch --no-clear  # Don't clear screen before display
+musikfetch --help      # Show help message
+musikfetch --version   # Show version info
+musikfetch --no-clear  # Don't clear screen before display
 
 Supported Players 🎧
 
@@ -114,16 +114,16 @@ Examples 📝
 bash
 
 # Basic usage
-songfetch
+musikfetch
 
 # Keep terminal history (don't clear)
-songfetch --no-clear
+musikfetch --no-clear
 
 # Check version
-songfetch --version
+musikfetch --version
 
 # Quick check with curl
-curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/songfetch/main/songfetch | bash -s --
+curl -sL https://raw.githubusercontent.com/YOUR_USERNAME/musikfetch/main/musikfetch | bash -s --
 
 How It Works 🔧
 
@@ -174,10 +174,10 @@ Development
 bash
 
 # Test changes locally
-./songfetch
+./musikfetch
 
 # Debug mode
-bash -x songfetch
+bash -x musikfetch
 
 Roadmap 🗺️
 
