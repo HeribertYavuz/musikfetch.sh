@@ -1,217 +1,139 @@
-musikfetch 🎵
+# musikfetch 🎵
 
-A beautiful CLI tool that displays currently playing music information with album art in your terminal.
-Features ✨
+**musikfetch** is a simple and stable Bash script that displays information about the currently playing music (title, artist, album) and, when possible, shows the **album cover directly in the terminal**. It is designed especially for *minimal* and *rice*-focused Linux setups.
+<img width="1920" height="1080" alt="20251213_19h57m23s_grim" src="https://github.com/user-attachments/assets/f0164954-3aaa-46e6-85e8-4a1e3d90ec3b" />
 
-    🎨 Album Art Display: Shows album cover in Kitty terminal
+---
 
-    🖼️ ASCII Fallback: Displays ASCII art in other terminals
+## ✨ Features
 
-    🎵 Music Info: Shows title, artist, album, and playback status
+* 🎶 Displays currently playing track information (MPRIS-compatible players)
+* 🖼️ Terminal album cover support (Kitty / WezTerm)
+* 🧱 ASCII placeholder for unsupported terminals
+* 🎨 Clean, readable, colored output
+* ⚡ Lightweight, fast, standalone Bash script
 
-    ⏱️ Progress Bar: Visual progress indicator with time display
+---
 
-    🚀 Lightweight: Fast and minimal - no bloat
+## 📦 Requirements
 
-    🎯 Simple: One command, instant results
+The following tools must be installed on your system:
 
-Preview 📸
-text
+* `bash`
+* `playerctl`
+* `curl`
+* `jq`
 
-▓▒░ musikfetch v1.0.0 ░▒▓
+For album cover display:
 
-ALBUM ART
-[Album cover displayed here in Kitty]
+* **Kitty** or **WezTerm** terminal emulator
 
-NOW PLAYING
-──────────────────────────────
-▶ Playing
-🎵 Title:  Bohemian Rhapsody
-🎤 Artist: Queen
-💿 Album:  A Night at the Opera
-⏱  Progress: 02:15 / 05:55
-[███████████───────────] 38%
-──────────────────────────────
+> The script works with MPRIS-compatible music players such as Spotify, VLC, mpd, etc.
 
-Installation 📦
-Quick Install
-bash
+---
 
-# Download and install
-curl -sL https://raw.githubusercontent.com/HeribertYavuz/musikfetch/main/musikfetch -o musikfetch
-chmod +x musikfetch
-sudo mv musikfetch /usr/local/bin/
+## 🛠️ Installation
 
-Manual Install
-bash
-
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/musikfetch.git
+```bash
+git clone https://github.com/yourusername/musikfetch.git
 cd musikfetch
+chmod +x musikfetch.sh
+```
 
-# Make executable
-chmod +x musikfetch
+Optional: install globally
 
-# Install globally (optional)
-sudo cp musikfetch /usr/local/bin/
+```bash
+sudo cp musikfetch.sh /usr/local/bin/musikfetch
+```
 
-Dependencies ⚙️
-Required:
+---
 
-    playerctl - For music player control
-    bash
+## ▶️ Usage
 
-# Ubuntu/Debian
-sudo apt install playerctl
+```bash
+./musikfetch.sh
+```
 
-# Arch
-sudo pacman -S playerctl
+If installed globally:
 
-# Fedora
-sudo dnf install playerctl
-
-Optional but Recommended:
-
-    Kitty Terminal - For actual album art display
-
-        Install: kitty terminal
-
-Usage 🚀
-
-Simply run:
-bash
-
+```bash
 musikfetch
+```
 
-Options:
-bash
+---
 
-musikfetch --help      # Show help message
-musikfetch --version   # Show version info
-musikfetch --no-clear  # Don't clear screen before display
+## 🔗 Alias Usage
 
-Supported Players 🎧
+If you prefer not to install the script globally, you can create an alias so that typing **`musikfetch`** runs the script in the background.
 
-Any MPRIS-compatible media player:
+### Bash / Zsh
 
-    Spotify
+```bash
+alias musikfetch='bash /path/to/musikfetch.sh'
+```
 
-    VLC
+To make it permanent, add the line above to one of the following files:
 
-    Rhythmbox
+* `~/.bashrc`
+* `~/.zshrc`
 
-    Firefox (when playing media)
+Then reload your shell configuration:
 
-    Chromium/Chrome (when playing media)
+```bash
+source ~/.bashrc   # or source ~/.zshrc
+```
 
-    And many more...
+Now you can simply run:
 
-Terminal Support 🖥️
-Terminal	Album Art	ASCII Fallback
-Kitty	✅ Full color image	-
-Other terminals	❌	✅ ASCII art
-Examples 📝
-bash
-
-# Basic usage
+```bash
 musikfetch
+```
 
-# Keep terminal history (don't clear)
-musikfetch --no-clear
+---
 
-# Check version
-musikfetch --version
+## 🖥️ Terminal Behavior
 
-# Quick check with curl
-curl -sL https://raw.githubusercontent.com/HeribertYavuz/musikfetch/main/musikfetch | bash -s --
+* **Kitty / WezTerm**
 
-How It Works 🔧
+  * Album cover is rendered directly inside the terminal
 
-    Fetches metadata from your music player using playerctl
+* **Other terminals**
 
-    Retrieves album art URL from player metadata
+  * An ASCII placeholder is shown instead
+  * Track information is still displayed normally
 
-    Displays image in Kitty using kitten icat
+---
 
-    Shows ASCII art in other terminals
+## 📸 Example Output
 
-    Formats output with colors and progress bar
+```
+♪ Now Playing
+────────────
+Title  : Everlong
+Artist : Foo Fighters
+Album  : The Colour and the Shape
+```
 
-Troubleshooting 🔍
-"No active music player detected"
+(Album art appears above when using Kitty or WezTerm)
 
-    Make sure a media player is running
+---
 
-    Check if your player supports MPRIS
+## ⚠️ Notes
 
-"playerctl is not installed"
+* If no music is playing, output may be empty
+* When multiple players are active, `playerctl` selects the default one
+* Works on both Wayland and X11 environments
 
-    Install playerctl using package manager
+---
 
-    See Dependencies section
+## 📄 License
 
-Album art not showing in Kitty
+MIT License
 
-    Ensure you're using Kitty terminal
+---
 
-    Try updating Kitty to latest version
+## 💚 Contributing
 
-Contributing 🤝
+Issues, suggestions, and pull requests are always welcome!
 
-Contributions are welcome! Here's how:
-
-    Fork the repository
-
-    Create a feature branch (git checkout -b feature/AmazingFeature)
-
-    Commit your changes (git commit -m 'Add AmazingFeature')
-
-    Push to the branch (git push origin feature/AmazingFeature)
-
-    Open a Pull Request
-
-Development
-bash
-
-# Test changes locally
-./musikfetch
-
-# Debug mode
-bash -x musikfetch
-
-Roadmap 🗺️
-
-    Configuration file support
-
-    Multiple output formats
-
-    More ASCII art styles
-
-    Integration with music APIs
-
-    Themes and color schemes
-
-License 📄
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments 🙏
-
-    Inspired by FastFetch and similar CLI tools
-
-    Uses playerctl for music player interaction
-
-    Thanks to Kitty terminal developers for awesome image support
-
-    All the amazing open-source projects that made this possible
-
-Support 💬
-
-Found a bug? Have a feature request?
-
-    Open an Issue
-
-    Star the repository if you like it! ⭐
-
-Made with ❤️ for music lovers and terminal enthusiasts
-
-"Music is the soundtrack of your life." 🎶
+> *"Even small tools can make a big difference when used in the right place."* ✨
