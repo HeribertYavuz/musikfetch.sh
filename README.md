@@ -36,7 +36,7 @@ For album cover display:
 ## 🛠️ Installation
 
 ```bash
-git clone https://github.com/yourusername/musikfetch.git
+git clone https://github.com/HeribertYavuz/musikfetch.git
 cd musikfetch
 chmod +x musikfetch.sh
 ```
