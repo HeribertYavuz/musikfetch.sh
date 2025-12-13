@@ -1,7 +1,8 @@
 # musikfetch 🎵
 
 **musikfetch** is a simple and stable Bash script that displays information about the currently playing music (title, artist, album) and, when possible, shows the **album cover directly in the terminal**. It is designed especially for *minimal* and *rice*-focused Linux setups.
-<img width="1920" height="1080" alt="20251213_19h57m23s_grim" src="https://github.com/user-attachments/assets/f0164954-3aaa-46e6-85e8-4a1e3d90ec3b" />
+
+<img width="1920" height="1080" alt="20251213_20h01m03s_grim" src="https://github.com/user-attachments/assets/75f8e7b6-b4e5-4a6e-b526-34f8f5254e98" />
 
 ---
 
